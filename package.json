@@ -7,8 +7,8 @@
   "author": "kroyo <kroyoshi@163.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "",
-    "build": "webpack --config webpack.config.js"
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --config webpack.config.js",
+    "build": "cross-env NODE_ENV=production webpack --config webpack.config.js"
   },
   "dependencies": {
     "css-loader": "^1.0.1",
@@ -19,5 +19,8 @@
     "vue-loader": "^15.4.2",
     "vue-template-compiler": "^2.5.17",
     "webpack": "^4.25.1"
+  },
+  "devDependencies": {
+    "webpack-cli": "^3.1.2"
   }
 }

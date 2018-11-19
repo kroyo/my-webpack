@@ -1,7 +1,10 @@
 const path = require('path');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
+const isDev = process.env.NODE_ENV === 'development'
+
 module.exports = {
+  target: 'web',
   entry: path.join(__dirname,'src/index.js'),
   output: {
     filename: 'bundle.js',
@@ -46,3 +49,15 @@ module.exports = {
     new VueLoaderPlugin()
   ]
 }
+
+if(isDev) {
+  config.devSever = {
+    port: 8080,
+    host: '0.0.0.0',
+    overlay: {
+      errors: true,
+    }
+  }
+}
+
+module.exports = config
