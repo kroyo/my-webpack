@@ -1,0 +1,11 @@
+{
+  "name": "vue-webpack",
+  "version": "1.0.0",
+  "description": "studing webpack and vue ",
+  "main": "index.js",
+  "author": "kroyo",
+  "license": "MIT",
+  "scripts": {
+    "start": "npm run dev"
+  }
+}
