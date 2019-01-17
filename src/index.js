@@ -1,12 +1,13 @@
-import Vue from 'vue';
-import App from './app.vue'
+import _ from 'lodash'
 
-import './assets/images/bg.jpg'
-import './assets/styles/test.css'
+function component() {
+  var element = document.createElement('div');
 
-const root = document.createElement('div')
-document.body.appendChild(root);
+  // Lodash（目前通过一个 script 脚本引入）对于执行这一行是必需的
+  // Lodash, now imported by this script
+  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
 
-new Vue({
-  render: (h) => h(App)
-}).$mount(root)
+  return element;
+}
+
+document.body.appendChild(component());
