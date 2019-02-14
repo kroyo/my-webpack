@@ -14,21 +14,6 @@ module.exports = {
     contentBase: './dist',
     hot: true
   },
-  plugins: [
-    // 自动清理文件
-    new CleanWebpackPlugin(['dist']),
-    // HtmlWebpackPlugin 默认生成 index.html 文件
-    new HtmlWebpackPlugin({
-      title: 'Output Management'
-    }),
-    new webpack.NamedModulesPlugin(),
-    new webpack.HotModuleReplacementPlugin()
-  ],
-  output: {
-    filename: '[name].bundle.js',
-    path: path.resolve(__dirname, 'dist'),
-    publicPath: '/'
-  },
   module: {
     rules: [
       {
@@ -68,5 +53,20 @@ module.exports = {
         ]
       }
     ]
+  },
+  plugins: [
+    // 自动清理文件
+    new CleanWebpackPlugin(['dist']),
+    // HtmlWebpackPlugin 默认生成 index.html 文件
+    new HtmlWebpackPlugin({
+      title: 'Output Management'
+    }),
+    new webpack.NamedModulesPlugin(),
+    new webpack.HotModuleReplacementPlugin()
+  ],
+  output: {
+    filename: '[name].bundle.js',
+    path: path.resolve(__dirname, 'dist'),
+    publicPath: '/'
   }
 }
